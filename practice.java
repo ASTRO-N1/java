@@ -3,7 +3,7 @@ import java.util.*;
 public class practice {
     static char counter = 'A';
 
-     static class Node {
+    static class Node {
         int depth, value;
         boolean isMax, pruned = false;
         Node left , right;
