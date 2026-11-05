@@ -1,29 +1,39 @@
-# Simple Reflex Agent - Vacuum Cleaner World                             
-environment = {                                                          
-   "A": "Dirty",                                                         
-   "B": "Dirty"                                                          
-}                                                                        
-location = "A"                                                           
-steps = 6                                                                
-print("Initial Environment:", environment)                               
-print("Initial Vacuum Location:", location)                              
-print("\nAgent Execution:\n")                                            
-for step in range(1, steps + 1):                                         
-   status = environment[location]                                        
-   print("Step", step)                                                   
-   print("Location:", location)                                          
-   print("Room Status:", status)                                         
-   if status == "Dirty":                                                 
-      action = "Suck"                                                    
-      environment[location] = "Clean"                                    
-   elif location == "A":                                                 
-      action = "Move Right"                                              
-      location = "B"                                                     
-   else:                                                                 
-      action = "Move Left"                                               
-      location = "A"                                                     
-   print("Action:", action)                                              
-   print("Environment:", environment)                                    
-   print("-" * 30)                                                       
-print("\nFinal Environment:", environment)                               
-print("Final Vacuum Location:", location)                                
+environment={
+    "A":"dirty",
+    "B":"dirty"
+}
+location="A"
+print("intial environment:",environment)
+print("intial location:",location)
+
+print("\n Agent execution:\n")
+step=1
+while "dirty" in environment.values():
+    status=environment[location]
+
+    print("step",step)
+    print("Location:", location)
+    print("Room Status:", status)
+
+    if status=="dirty":
+        action = "Suck"
+        environment[location] = "Clean"
+
+    elif location=="A":
+        action="move right"
+        location="B"
+
+    else:
+        action="move left"
+        location="A"        
+
+
+    
+    print("Action:", action)
+    print("Environment:", environment)
+    print("-" * 30)
+
+    step += 1
+
+print("\nFinal Environment:", environment)
+print("Final Vacuum Location:", location)
